@@ -1,0 +1,101 @@
+html {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  background-color: #47c8b7;
+}
+
+p {
+  color: #373D3F;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.detectionData {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 60%;
+}
+
+.card {
+  background-color: #ffffff;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 40px 15px 15px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(40% - 10px);
+  max-width: calc(48% - 10px);
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+.reading {
+  background-color: #ffffff;
+}
+
+.card-readings {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  margin-top: 10px;
+  flex-wrap: nowrap;
+}
+
+.reading {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+}
+
+.results {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.activity_image {
+  height: 100px;
+  width: 100px;
+  border: 2px solid #000000;
+  margin: 10px;
+}
+
+.charts {
+  height: 300px;
+  width: 450px;
+}

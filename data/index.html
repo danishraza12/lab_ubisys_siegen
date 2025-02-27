@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Lab Ubiquitous Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="/js/apexcharts.js"></script>
+  <script src="/js/d3.v6.min.js"></script>
+  <script type="module" src="/js/three.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <div class="heading">
+      <h1>Lab Ubiquitous Systems</h1>
+    </div>
+    <div class="detectionData">
+      <div class="results">
+        <p style="font-size: 1.5rem;" id="user_status">
+          The User Is At Rest
+        </p>
+        <div>
+          <img id="activity_image"
+            src="data:image/png;base64,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"
+            class="activity_image">
+        </div>
+      </div>
+      <div class="cardsContainer">
+
+        <div class="card">
+          <p class="card-title">GYROSCOPE</p>
+          <span class="card-readings">
+            <p><span class="reading">X: <span id="gyroX"></span> rad</span></p>
+            <p><span class="reading">Y: <span id="gyroY"></span> rad</span></p>
+            <p><span class="reading">Z: <span id="gyroZ"></span> rad</span></p>
+          </span>
+          <span class="chart">
+            <div id="gyroChart" class="charts">
+            </div>
+          </span>
+        </div>
+
+        <div class="card">
+          <p class="card-title">ACCELEROMETER</p>
+          <span class="card-readings">
+            <p><span class="reading">X: <span id="accX"></span> ms<sup>2</sup></span></p>
+            <p><span class="reading">Y: <span id="accY"></span> ms<sup>2</sup></span></p>
+            <p><span class="reading">Z: <span id="accZ"></span> ms<sup>2</sup></span></p>
+          </span>
+          <span class="chart">
+            <div id="accChart" class="charts">
+            </div>
+          </span>
+        </div>
+
+        <br />
+
+        <div class="card">
+          <span>
+            <p class="card-title">TEMPERATURE</p>
+            <p><span class="reading"><span id="bmpTemperature"></span> &deg;C</span></p>
+          </span>
+          <span class="chart">
+            <div id="tempChart" class="charts">
+            </div>
+          </span>
+        </div>
+
+        <div class="card">
+          <span>
+            <p class="card-title">PRESSURE</p>
+            <p><span class="reading">P: <span id="bmp"></span> Pa</span></p>
+          </span>
+          <span class="chart">
+            <div id="pressureChart" class="charts">
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/script.js"></script>
+</body>
+
+</html>
